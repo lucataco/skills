@@ -6,7 +6,15 @@ Discover, compare, and run AI models using Replicate's API.
 
 ## Installing
 
-These skills work with any agent that supports the Agent Skills standard, including Claude Code, OpenCode, OpenAI Codex, and Pi.
+These skills work with any agent that supports the [Agent Skills standard](https://agentskills.io/specification), including Claude Code, OpenCode, OpenAI Codex, and Pi.
+
+### npx skills
+
+Install using the [`npx skills`](https://skills.sh) CLI:
+
+```
+npx skills add https://github.com/replicate/skills
+```
 
 ### Claude Code
 
@@ -21,22 +29,3 @@ Install using the [plugin marketplace](https://code.claude.com/docs/en/discover-
 OpenCode automatically discovers Claude Code skills installed under `~/.claude/skills/`.
 
 You can also copy `skills/replicate` into `~/.config/opencode/skills/replicate`.
-
-### npx skills
-
-Install using the [`npx skills`](https://skills.sh) CLI:
-
-```
-npx skills add https://github.com/replicate/skills
-```
-
-### Clone / Copy
-
-Clone this repo and copy the skill folders into the appropriate directory for your agent:
-
-| Agent | Skill Directory | Docs |
-|-------|-----------------|------|
-| Claude Code | `~/.claude/skills/` | [docs](https://code.claude.com/docs/en/skills) |
-| OpenCode | `~/.config/opencode/skills/` | [docs](https://opencode.ai/docs/skills/) |
-| OpenAI Codex | `~/.codex/skills/` | [docs](https://developers.openai.com/codex/skills/) |
-| Pi | `~/.pi/agent/skills/` | [docs](https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent#skills) |
