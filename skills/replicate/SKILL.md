@@ -12,7 +12,9 @@ description: Discover, compare, and run AI models using Replicate's API
 
 ## Choosing models
 
-- Use the search and collections APIs to find and compare models
+- Use the search and collections APIs to find and compare the best models. Do not list all the models via API, as it's basically a firehose.
+- Collections are curated by Replicate staff, so they're vetted.
+- Official models are in the "official" collection.
 - Use official models because they:
   - are always running
   - have stable API interfaces
@@ -29,9 +31,11 @@ Models take time to run. There are three ways to run a model via API and get its
 2. Set a `Prefer: wait` header when creating a prediction for a blocking synchronous response. Only recommended for very fast models.
 3. Set an HTTPS webhook URL when creating a prediction, and Replicate will POST to that URL when the prediction completes.
 
-- Use the "POST /v1/predictions" endpoint to run models, as it supports both official and community models.
+Follow these guideliness when running models:
+
+- Use the "POST /v1/predictions" endpoint, as it supports both official and community models.
 - Every model has its own OpenAPI schema. Always fetch and check model schemas to make sure you're setting valid inputs.
 - Use HTTPS URLs for file inputs whenever possible. You can also send base64-encoded files, but they should be avoided.
 - Fire off multiple predictions concurrently. Don't wait for one to finish before starting the next.
-- Output file URLs expire after 1 hour, so back them up if you need to keep them using a service like Cloudflare R2.
+- Output file URLs expire after 1 hour, so back them up if you need to keep them, using a service like Cloudflare R2.
 - Webhooks are a good mechanism for receiving and storing prediction output.
