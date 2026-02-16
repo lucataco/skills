@@ -10,6 +10,16 @@ description: Discover, compare, and run AI models using Replicate's API
 - MCP server: https://mcp.replicate.com
 - Set an `Accept: text/markdown` header when requesting docs pages to get a Markdown response.
 
+## Workflow
+
+Here's a common workflow for using Replicate's API to run a model:
+
+1. **Choose the right model** - Search with the API or ask the user
+2. **Get model metadata** - Fetch model input and output schema via API
+3. **Create prediction** - POST to /v1/predictions
+4. **Poll for results** - GET prediction until status is "succeeded"
+5. **Return output** - Usually URLs to generated content
+
 ## Choosing models
 
 - Use the search and collections APIs to find and compare the best models. Do not list all the models via API, as it's basically a firehose.
@@ -39,3 +49,5 @@ Follow these guideliness when running models:
 - Fire off multiple predictions concurrently. Don't wait for one to finish before starting the next.
 - Output file URLs expire after 1 hour, so back them up if you need to keep them, using a service like Cloudflare R2.
 - Webhooks are a good mechanism for receiving and storing prediction output.
+
+
