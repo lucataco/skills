@@ -24,6 +24,14 @@ Install using the [plugin marketplace](https://code.claude.com/docs/en/discover-
 /plugin marketplace add replicate/skills
 ```
 
+### ClawHub
+
+Install using the [ClawHub](https://clawhub.ai) CLI:
+
+```
+npx clawhub@latest install replicate
+```
+
 ### OpenCode
 
 OpenCode automatically discovers Claude Code skills installed under `~/.claude/skills/`.
