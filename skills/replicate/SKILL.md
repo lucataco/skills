@@ -44,7 +44,10 @@ Models take time to run. There are three ways to run a model via API and get its
 Follow these guideliness when running models:
 
 - Use the "POST /v1/predictions" endpoint, as it supports both official and community models.
-- Every model has its own OpenAPI schema. Always fetch and check model schemas to make sure you're setting valid inputs.
+- Every model has its own OpenAPI schema. Always fetch and check model schemas to make sure you're setting valid inputs. Even popular models change their schemas.
+- Validate input parameters against schema constraints (minimum, maximum, enum values). Don't generate values that violate them.
+- When unsure about a parameter value, use the model's default example or omit the optional parameter.
+- Don't set optional inputs unless you have a reason to. Stick to the required inputs and let the model's defaults do the work.
 - Use HTTPS URLs for file inputs whenever possible. You can also send base64-encoded files, but they should be avoided.
 - Fire off multiple predictions concurrently. Don't wait for one to finish before starting the next.
 - Output file URLs expire after 1 hour, so back them up if you need to keep them, using a service like Cloudflare R2.
