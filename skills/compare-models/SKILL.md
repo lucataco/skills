@@ -39,6 +39,9 @@ description: Compare Replicate models by cost, speed, quality, and capabilities.
 - Community models: may cold-boot, require version pinning, maintained by the author.
 - If a community model meets your needs and an official model doesn't, consider creating a deployment for consistent uptime.
 
-## Image model comparisons
+## Prompting guidance
 
-For image generation and editing model comparisons, including task-specific model selection tables and cost/speed reference data, see the [prompt-images](../prompt-images/SKILL.md) skill.
+For prompting techniques and task-specific guidance:
+
+- Image generation and editing: see the [prompt-images](../prompt-images/SKILL.md) skill.
+- Video generation: see the [prompt-videos](../prompt-videos/SKILL.md) skill.

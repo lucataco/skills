@@ -37,3 +37,4 @@ jobs:
           npx clawhub@latest publish skills/compare-models --slug replicate-compare-models --name "Replicate: Compare Models"
           npx clawhub@latest publish skills/run-models --slug replicate-run-models --name "Replicate: Run Models"
           npx clawhub@latest publish skills/prompt-images --slug replicate-prompt-images --name "Replicate: Prompt Images"
+          npx clawhub@latest publish skills/prompt-videos --slug replicate-prompt-videos --name "Replicate: Prompt Videos"

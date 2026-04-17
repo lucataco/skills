@@ -10,6 +10,7 @@ This repo publishes Agent Skills for Replicate: focused guides for finding, comp
 - `skills/compare-models/SKILL.md` — evaluating models by cost, speed, quality, and capabilities.
 - `skills/run-models/SKILL.md` — predictions, polling, webhooks, streaming, file I/O, concurrency, multi-model workflows.
 - `skills/prompt-images/SKILL.md` — prompting techniques for image generation and editing models.
+- `skills/prompt-videos/SKILL.md` — prompting techniques for video generation models.
 - `script/lint` — validates the skills.
 - `.mcp.json` — points to the remote MCP server.
 - `.claude-plugin/` — marketplace metadata for Claude Code.
@@ -28,4 +29,5 @@ script/lint skills/find-models
 script/lint skills/compare-models
 script/lint skills/run-models
 script/lint skills/prompt-images
+script/lint skills/prompt-videos
 ```
