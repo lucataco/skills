@@ -8,6 +8,7 @@ Skills included:
 - **compare-models** — evaluate models by cost, speed, quality, and capabilities
 - **run-models** — create predictions, poll, use webhooks, stream, handle files, run concurrently
 - **prompt-images** — prompting techniques for image generation and editing models
+- **prompt-videos** — prompting techniques for video generation and editing models
 
 ## Installing
 
