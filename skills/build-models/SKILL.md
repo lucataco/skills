@@ -67,7 +67,6 @@ build:
   cuda: "12.8"
   python_version: "3.12"
   python_requirements: requirements.txt
-  cog_runtime: true
   system_packages:
     - libgl1
     - libglib2.0-0
@@ -76,7 +75,6 @@ predict: predict.py:Predictor
 
 Notes:
 
-- `cog_runtime: true` opts into the newer Rust-based runtime. Set it for new models.
 - Pin Python to a specific minor version, and pin every line in `requirements.txt`. Floating versions break cold boots.
 - Use `python_requirements` over inline `python_packages` once the list grows.
 - `cuda` follows your torch wheel (e.g. `12.8` paired with `torch==2.7.1+cu128`).
@@ -361,10 +359,6 @@ Tips:
 ## Training
 
 If your model supports fine-tuning, add `train: train.py:train` to `cog.yaml` and write a `train()` function that returns `TrainingOutput(weights=Path("model.tar"))`. The predictor then accepts the URL via `setup(self, weights)` or the `COG_WEIGHTS` env var. See <https://cog.run/training> and `replicate/flux-fine-tuner` for a full example.
-
-## Internal infrastructure
-
-Replicate runs an internal base-image system (`monobase`) and a FUSE-backed lazy weights layer for production models. You don't need to configure these; standard `cog build` benefits from them automatically.
 
 ## Guidelines
 
